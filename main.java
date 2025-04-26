@@ -1,32 +1,34 @@
-// This activity is mainly to explain multi-level inheritance
+// This activity is mainly to explain Hierarchical Inheritance
 
 // Parent class
-class Animal {
-    void eat() {
-        System.out.println("eating... Animal class... eat method");
+class Mammals {
+    void mam() {
+        System.out.println("Inside Mammals Class");
     }
 }
 
 // Child class
-class Lion extends Animal {
+class Lion extends Mammals {
     void roar() {
-        System.out.println("Roar... Lion class... roar method");
+        System.out.println("Inside Lion class");
     }
 }
 
-// Child of child
-class BabyLion extends Lion {
-    void weep() {
-        System.out.println("weeping... BabyLion class... weep method");
+// Another child class
+class Human extends Mammals {
+    void hum() {
+        System.out.println("Inside Human");
     }
 }
 
 // Main class
 public class main {
     public static void main(String[] args) {
-        BabyLion obj = new BabyLion(); // Object of child of child class
-        obj.weep();
+        Lion obj = new Lion(); // Object of child class (Lion)
+
+        // obj.hum(); // This will cause an error because Lion doesn't have hum() method
+
         obj.roar();
-        obj.eat();
+        obj.mam();
     }
 }
